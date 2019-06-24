@@ -1,9 +1,10 @@
 pipeline {
-    agent { label 'master' }
-    stages {
+    agent any
         stage('build') {
             steps {
-                echo "Hello"
+                sh 'cd nodejs-server'
+                sh 'npm install'
+                sh 'test'
             }
         }
     }
