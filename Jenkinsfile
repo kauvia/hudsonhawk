@@ -6,9 +6,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ls -la'
-                sh 'cd nodejs-server'
-                sh 'ls -la'
+                sh 'cd nodejs-server && npm install'
+                sh 'cd nodejs-server && test'
             }
         }
     }
