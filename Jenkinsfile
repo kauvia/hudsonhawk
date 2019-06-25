@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'ls -la'
                 sh 'cd nodejs-server'
-                sh 'npm install'
-                sh 'test'
+                sh 'ls -la'
             }
         }
     }
