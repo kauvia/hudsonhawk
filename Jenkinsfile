@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cd nodejs-server && npm install'
-                sh 'cd nodejs-server && npm run test'
+                dir('nodejs-server') {
+                    sh 'cd nodejs-server && npm install'
+                    sh 'cd nodejs-server && npm run test'
+                }
             }
         }
     }
